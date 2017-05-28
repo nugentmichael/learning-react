@@ -11,6 +11,17 @@
                 padding: 50px;
                 background-color: #FFF;
             }
+
+            .letter {
+                padding: 10px;
+                margin: 10px;
+                background-color: #FFDE00;
+                color: #333;
+                display: inline-block;
+                font-family: monospace;
+                font-size: 32px;
+                text-align: center;
+            }
         </style>
     </head>
 
@@ -20,7 +31,7 @@
             var Letter = React.createClass({
                 render: function() {
                     return (
-                        <div>
+                        <div className="letter">
                             {this.props.children}
                         </div>
                     );
