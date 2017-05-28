@@ -9,8 +9,24 @@
     <body>
         <div id="container"></div>
         <script type="text/babel">
+            var HelloWorld = React.createClass({
+                render: function() {
+                    return (
+                        <p>Hello, world!</p>
+                    );
+                }
+            });
+
             ReactDOM.render(
-                
+                <div>
+                    <HelloWorld />
+                    <HelloWorld />
+                    <HelloWorld />
+                    <HelloWorld />
+                    <HelloWorld />
+                    <HelloWorld />
+                </div>,
+                document.querySelector('#container')
             );
         </script>
     </body>
