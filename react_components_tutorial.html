@@ -4,27 +4,39 @@
         <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
         <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+        <style>
+            #container {
+                padding: 50px;
+            }
+
+            #container button {
+                padding: 25px 50px;
+                background-color: transparent;
+                border: 5px solid orange;
+                color: orange;
+                font-size: 48px;
+                font-weight: bold;
+            }
+        </style>
     </head>
 
     <body>
         <div id="container"></div>
         <script type="text/babel">
-            var HelloWorld = React.createClass({
+            var Buttonify = React.createClass({
                 render: function() {
                     return (
-                        <p>Hello, {this.props.greetTarget}!</p>
+                        <div>
+                            <button type={this.props.behavior}>{this.props.children}</button>
+                        </div>
                     );
                 }
             });
 
             ReactDOM.render(
                 <div>
-                    <HelloWorld greetTarget="Batman" />
-                    <HelloWorld greetTarget="Iron Man" />
-                    <HelloWorld greetTarget="Nicolas Cage" />
-                    <HelloWorld greetTarget="Mega Man" />
-                    <HelloWorld greetTarget="Bono" />
-                    <HelloWorld greetTarget="Cat Woman" />
+                    <Buttonify behavior="Submit">SEND DATA</Buttonify>
                 </div>,
                 document.querySelector('#container')
             );
