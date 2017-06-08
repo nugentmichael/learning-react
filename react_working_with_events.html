@@ -43,6 +43,20 @@
                     }
                 },
 
+                increase: function(e) {
+                    var currentCount = this.state.count;
+
+                    if (e.shiftKey) {
+                        currentCount += 10;
+                    } else {
+                        currentCount += 1;
+                    }
+
+                    this.setState({
+                        count: currentCount
+                    });
+                },
+
                 render: function() {
                     var backgroundStyle = {
                         padding: 50,
@@ -66,7 +80,7 @@
                     return (
                         <div style={backgroundStyle}>
                             <Counter display={this.state.count} />
-                            <button style={buttonStyle}>+</button>
+                            <button onClick={this.increase} style={buttonStyle}>+</button>
                         </div>
                     );
                 }
