@@ -55,6 +55,10 @@
         .content li {
             margin-bottom: 20px;
         }
+
+        .active {
+            background-color: #0099FF;
+        }
     </style>
 </head>
 
@@ -79,13 +83,13 @@
                         <h1>Simple SPA</h1>
                         <ul className="header">
                             <li>
-                                <IndexLink to="/">Home</IndexLink>
+                                <IndexLink to="/" activeClassName="active">Home</IndexLink>
                             </li>
                             <li>
-                                <Link to="/stuff">Stuff</Link>
+                                <Link to="/stuff" activeClassName="active">Stuff</Link>
                             </li>
                             <li>
-                                <Link to="/contact">Contact</Link>
+                                <Link to="/contact" activeClassName="active">Contact</Link>
                             </li>
                         </ul>
 
