@@ -144,6 +144,8 @@
             <Router history={hashHistory}>
                 <Route path="/" component={App}>
                     <IndexRoute component={Home} />
+                    <Route path="stuff" component={Stuff} />
+                    <Route path="contact" component={Contact} />
                 </Route>
             </Router>,
             destination
