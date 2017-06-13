@@ -51,7 +51,20 @@
             },
 
             addItem: function(e) {
-                    
+                var itemArray = this.state.items;
+
+                itemArray.push(
+                    {
+                        text: this._inputElement.value,
+                        key: Date.now()
+                    }
+                );
+
+                this.setState({
+                    items: itemArray
+                });
+
+                e.preventDefault();
             },
 
             render: function() {
@@ -59,7 +72,7 @@
                     <div className="todoListMain">
                         <div className="header">
                             <form onSubmit={this.addItem}>
-                                <input placeholder="enter task">
+                                <input ref={(a) => this._inputElement = a} placeholder="enter task">
                                 </input>
                                 <button type="submit">add</button>
                             </form>
